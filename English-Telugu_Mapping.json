@@ -1,0 +1,194 @@
+{
+  "_meta": {
+    "description": "Telugu mapping table for Vedic astrology (Panchanga) outputs used by Vedara.",
+    "notes": [
+      "Keyed by canonical English/Sanskrit name, not numeric index, because index conventions (0-based vs 1-based, start point) differ between jyotishganit and raw pyswisseph longitude math.",
+      "If deriving an index from pyswisseph longitudes, convert it to the canonical name using the *_order arrays before looking up Telugu here.",
+      "Tanglish/mixed-language values are intentionally NOT included -- only telugu (script) and english/sanskrit fields exist.",
+      "dosha list covers the commonly referenced doshas in mainstream Vedic astrology apps; it is not an exhaustive classical enumeration -- confirm against your astrology-content SME before treating it as final for the app's dosha-checking feature."
+    ]
+  },
+
+  "vaara": {
+    "order": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    "note_on_order": "Ordered to match Python's datetime.weekday() (Monday=0). Re-check against whichever library/convention you standardize on.",
+    "entries": {
+      "Sunday":    { "sanskrit": "Ravivara",    "telugu": "ఆదివారం" },
+      "Monday":    { "sanskrit": "Somavara",    "telugu": "సోమవారం" },
+      "Tuesday":   { "sanskrit": "Mangalavara", "telugu": "మంగళవారం" },
+      "Wednesday": { "sanskrit": "Budhavara",   "telugu": "బుధవారం" },
+      "Thursday":  { "sanskrit": "Guruvara",    "telugu": "గురువారం" },
+      "Friday":    { "sanskrit": "Shukravara",  "telugu": "శుక్రవారం" },
+      "Saturday":  { "sanskrit": "Shanivara",   "telugu": "శనివారం" }
+    }
+  },
+
+  "raasi": {
+    "order": ["Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius", "Capricorn", "Aquarius", "Pisces"],
+    "note_on_order": "0-indexed, matches pyswisseph sign index convention (0=Aries ... 11=Pisces): index = int(longitude // 30).",
+    "entries": {
+      "Aries":       { "sanskrit": "Mesha",      "telugu": "మేషం" },
+      "Taurus":      { "sanskrit": "Vrishabha",  "telugu": "వృషభం" },
+      "Gemini":      { "sanskrit": "Mithuna",    "telugu": "మిథునం" },
+      "Cancer":      { "sanskrit": "Karka",      "telugu": "కర్కాటకం" },
+      "Leo":         { "sanskrit": "Simha",      "telugu": "సింహం" },
+      "Virgo":       { "sanskrit": "Kanya",      "telugu": "కన్య" },
+      "Libra":       { "sanskrit": "Tula",       "telugu": "తుల" },
+      "Scorpio":     { "sanskrit": "Vrishchika", "telugu": "వృశ్చికం" },
+      "Sagittarius": { "sanskrit": "Dhanu",      "telugu": "ధనుస్సు" },
+      "Capricorn":   { "sanskrit": "Makara",     "telugu": "మకరం" },
+      "Aquarius":    { "sanskrit": "Kumbha",     "telugu": "కుంభం" },
+      "Pisces":      { "sanskrit": "Meena",      "telugu": "మీనం" }
+    }
+  },
+
+  "nakshatra": {
+    "order": [
+      "Ashwini", "Bharani", "Krittika", "Rohini", "Mrigashira", "Ardra", "Punarvasu",
+      "Pushya", "Ashlesha", "Magha", "Purva Phalguni", "Uttara Phalguni", "Hasta",
+      "Chitra", "Swati", "Vishakha", "Anuradha", "Jyeshtha", "Mula", "Purva Ashadha",
+      "Uttara Ashadha", "Shravana", "Dhanishta", "Shatabhisha", "Purva Bhadrapada",
+      "Uttara Bhadrapada", "Revati"
+    ],
+    "note_on_order": "0-indexed. Each spans 13\u00b020' (360/27) of the sidereal zodiac, starting at 0\u00b0 Aries: index = int(longitude // (360/27)).",
+    "entries": {
+      "Ashwini":           "అశ్విని",
+      "Bharani":           "భరణి",
+      "Krittika":          "కృత్తిక",
+      "Rohini":            "రోహిణి",
+      "Mrigashira":        "మృగశిర",
+      "Ardra":             "ఆరుద్ర",
+      "Punarvasu":         "పునర్వసు",
+      "Pushya":            "పుష్యమి",
+      "Ashlesha":          "ఆశ్లేష",
+      "Magha":             "మఖ",
+      "Purva Phalguni":    "పుబ్బ",
+      "Uttara Phalguni":   "ఉత్తర",
+      "Hasta":             "హస్త",
+      "Chitra":            "చిత్త",
+      "Swati":             "స్వాతి",
+      "Vishakha":          "విశాఖ",
+      "Anuradha":          "అనూరాధ",
+      "Jyeshtha":          "జ్యేష్ఠ",
+      "Mula":              "మూల",
+      "Purva Ashadha":     "పూర్వాషాఢ",
+      "Uttara Ashadha":    "ఉత్తరాషాఢ",
+      "Shravana":          "శ్రవణం",
+      "Dhanishta":         "ధనిష్ఠ",
+      "Shatabhisha":       "శతభిషం",
+      "Purva Bhadrapada":  "పూర్వాభాద్ర",
+      "Uttara Bhadrapada": "ఉత్తరాభాద్ర",
+      "Revati":            "రేవతి"
+    }
+  },
+
+  "tithi": {
+    "paksha": {
+      "Shukla":  "శుక్ల పక్షం",
+      "Krishna": "కృష్ణ పక్షం"
+    },
+    "order_1_to_14": [
+      "Pratipada", "Dwitiya", "Tritiya", "Chaturthi", "Panchami", "Shashthi",
+      "Saptami", "Ashtami", "Navami", "Dashami", "Ekadashi", "Dwadashi",
+      "Trayodashi", "Chaturdashi"
+    ],
+    "note": "Positions 1-14 use the same names in both Pakshas; only the 15th differs (Purnima in Shukla, Amavasya in Krishna).",
+    "entries_1_to_14": {
+      "Pratipada":   "పాడ్యమి",
+      "Dwitiya":     "విదియ",
+      "Tritiya":     "తదియ",
+      "Chaturthi":   "చవితి",
+      "Panchami":    "పంచమి",
+      "Shashthi":    "షష్ఠి",
+      "Saptami":     "సప్తమి",
+      "Ashtami":     "అష్టమి",
+      "Navami":      "నవమి",
+      "Dashami":     "దశమి",
+      "Ekadashi":    "ఏకాదశి",
+      "Dwadashi":    "ద్వాదశి",
+      "Trayodashi":  "త్రయోదశి",
+      "Chaturdashi": "చతుర్దశి"
+    },
+    "entry_15th": {
+      "Shukla":  { "name": "Purnima",  "telugu": "పౌర్ణమి" },
+      "Krishna": { "name": "Amavasya", "telugu": "అమావాస్య" }
+    }
+  },
+
+  "yoga": {
+    "order": [
+      "Vishkambha", "Priti", "Ayushman", "Saubhagya", "Shobhana", "Atiganda",
+      "Sukarma", "Dhriti", "Shoola", "Ganda", "Vriddhi", "Dhruva", "Vyaghata",
+      "Harshana", "Vajra", "Siddhi", "Vyatipata", "Variyana", "Parigha", "Shiva",
+      "Siddha", "Sadhya", "Shubha", "Shukla", "Brahma", "Indra", "Vaidhriti"
+    ],
+    "note_on_order": "27 Nitya Yogas, 0-indexed, each spanning 13\u00b020' of combined Sun+Moon longitude: index = int(((sun_long + moon_long) % 360) // (360/27)).",
+    "entries": {
+      "Vishkambha": "విష్కంభ",
+      "Priti":      "ప్రీతి",
+      "Ayushman":   "ఆయుష్మాన్",
+      "Saubhagya":  "సౌభాగ్య",
+      "Shobhana":   "శోభన",
+      "Atiganda":   "అతిగండ",
+      "Sukarma":    "సుకర్మ",
+      "Dhriti":     "ధృతి",
+      "Shoola":     "శూల",
+      "Ganda":      "గండ",
+      "Vriddhi":    "వృద్ధి",
+      "Dhruva":     "ధ్రువ",
+      "Vyaghata":   "వ్యాఘాత",
+      "Harshana":   "హర్షణ",
+      "Vajra":      "వజ్ర",
+      "Siddhi":     "సిద్ధి",
+      "Vyatipata":  "వ్యతీపాత",
+      "Variyana":   "వరీయాన్",
+      "Parigha":    "పరిఘ",
+      "Shiva":      "శివ",
+      "Siddha":     "సిద్ధ",
+      "Sadhya":     "సాధ్య",
+      "Shubha":     "శుభ",
+      "Shukla":     "శుక్ల",
+      "Brahma":     "బ్రహ్మ",
+      "Indra":      "ఇంద్ర",
+      "Vaidhriti":  "వైధృతి"
+    }
+  },
+
+  "karana": {
+    "note": "11 named Karanas cover 60 half-tithis per lunar month: 7 'Chara' (movable) Karanas repeat in a cycle across tithi-halves 2 through 29 (56 occurrences total), and 4 'Sthira' (fixed) Karanas each occur exactly once, at the end of Krishna Paksha's 30th tithi-half.",
+    "chara_movable_order": ["Bava", "Balava", "Kaulava", "Taitila", "Garaja", "Vanija", "Vishti"],
+    "sthira_fixed_order": ["Shakuni", "Chatushpada", "Naga", "Kimstughna"],
+    "entries": {
+      "Bava":        { "type": "chara",  "telugu": "బవ" },
+      "Balava":      { "type": "chara",  "telugu": "బాలవ" },
+      "Kaulava":     { "type": "chara",  "telugu": "కౌలవ" },
+      "Taitila":     { "type": "chara",  "telugu": "తైతిల", "aliases": ["Taitula"] },
+      "Garaja":      { "type": "chara",  "telugu": "గరజ", "aliases": ["Gara"] },
+      "Vanija":      { "type": "chara",  "telugu": "వణిజ" },
+      "Vishti":      { "type": "chara",  "telugu": "విష్టి", "aliases": ["Bhadra"] },
+      "Shakuni":     { "type": "sthira", "telugu": "శకుని" },
+      "Chatushpada": { "type": "sthira", "telugu": "చతుష్పాద" },
+      "Naga":        { "type": "sthira", "telugu": "నాగ" },
+      "Kimstughna":  { "type": "sthira", "telugu": "కింస్తుఘ్న" }
+    }
+  },
+
+  "dosha": {
+    "note": "Common doshas referenced in mainstream Vedic astrology / matchmaking apps. Not an exhaustive classical list -- have your astrology-content SME confirm this set and definitions before the dosha-checking feature ships, and remember doshas must always be presented as traditional/interpretive belief per the project's astrology-content framing, never as certainty.",
+    "entries": {
+      "Mangal Dosha":       { "aliases": ["Kuja Dosha"],   "telugu": "మాంగల్య దోషం", "telugu_aliases": ["కుజ దోషం"] },
+      "Kaal Sarp Dosha":    { "aliases": ["Kala Sarpa Dosha"], "telugu": "కాళ సర్ప దోషం" },
+      "Pitra Dosha":        { "aliases": [],               "telugu": "పితృ దోషం" },
+      "Shani Dosha":        { "aliases": ["Sade Sati", "Sadesati"], "telugu": "శని దోషం", "telugu_aliases": ["సాడేసాటి"] },
+      "Rahu-Ketu Dosha":    { "aliases": [],               "telugu": "రాహు కేతు దోషం" },
+      "Nadi Dosha":         { "aliases": [],               "telugu": "నాడి దోషం" },
+      "Bhakoot Dosha":      { "aliases": ["Bhakut Dosha"], "telugu": "భకూట దోషం" },
+      "Gana Dosha":         { "aliases": [],               "telugu": "గణ దోషం" },
+      "Guru Chandal Dosha": { "aliases": ["Guru Chandala Dosha"], "telugu": "గురు చండాల దోషం" },
+      "Grahan Dosha":       { "aliases": ["Grahana Dosha"], "telugu": "గ్రహణ దోషం" },
+      "Angarak Dosha":      { "aliases": ["Angaraka Dosha"], "telugu": "అంగారక దోషం" },
+      "Vish Dosha":         { "aliases": ["Visha Yoga"],   "telugu": "విష దోషం" },
+      "Ardhashtama Shani":  { "aliases": [],               "telugu": "అర్ధాష్టమ శని" }
+    }
+  }
+}
