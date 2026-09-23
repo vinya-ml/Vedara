@@ -18,7 +18,7 @@ A further gap is **safety**: existing astrology apps do not reliably detect when
 **Objective:** Design and build a cross-platform (Android/iOS) AI astrology application for Telugu-speaking users that:
 
 1. Computes accurate birth charts and planetary data using a proper ephemeris/astrology calculation library — never AI-invented positions.
-2. Provides a conversational chatbot that understands intent regardless of script or language mixing (Telugu / English / Tanglish / mixed), but always replies in pure Telugu or pure English only — never Tanglish or mixed output — and maintains conversational context.
+2. Provides a conversational chatbot that understands intent regardless of script or language mixing (Telugu / English), but always replies in pure Telugu or pure English only — never Tanglish or mixed output — and maintains conversational context.
 3. Separates deterministic astrology calculation from LLM interpretation, so the AI explains and interprets computed data rather than generating it from scratch.
 4. Enforces safety guardrails that detect high-risk queries (medical, mental-health crisis, financial, legal, abuse-related) across all supported languages and override astrology interpretation with appropriate, safe, non-astrological guidance.
 5. Presents all astrological content as interpretive/traditional belief rather than scientific or guaranteed fact.
